@@ -1,6 +1,6 @@
 # gocron: A Golang Job Scheduling Package.
 
-[![CI State](https://github.com/go-co-op/gocron/workflows/Go%20Test/badge.svg)](https://github.com/go-co-op/gocron/actions?query=workflow%3A"Go+Test") ![Go Report Card](https://goreportcard.com/badge/github.com/go-co-op/gocron) [![Go Doc](https://godoc.org/github.com/go-co-op/gocron?status.svg)](https://pkg.go.dev/github.com/go-co-op/gocron)
+[![CI State](https://github.com/talkincode/gocron/workflows/Go%20Test/badge.svg)](https://github.com/talkincode/gocron/actions?query=workflow%3A"Go+Test") ![Go Report Card](https://goreportcard.com/badge/github.com/talkincode/gocron) [![Go Doc](https://godoc.org/github.com/talkincode/gocron?status.svg)](https://pkg.go.dev/github.com/talkincode/gocron)
 
 gocron is a Golang job scheduling package which lets you run Go functions periodically at pre-determined interval using a simple, human-friendly syntax.
 
@@ -41,7 +41,7 @@ s.StartAsync()
 s.StartBlocking()
 ```
 
-For more examples, take a look in our [go docs](https://pkg.go.dev/github.com/go-co-op/gocron#pkg-examples)
+For more examples, take a look in our [go docs](https://pkg.go.dev/github.com/talkincode/gocron#pkg-examples)
 
 ## Options
 
