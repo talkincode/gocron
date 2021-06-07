@@ -2,7 +2,9 @@ package gocron
 
 import (
 	"context"
+	"encoding/json"
 	"fmt"
+	"strings"
 	"sync"
 	"time"
 
@@ -29,6 +31,24 @@ type Job struct {
 	runCount          int            // number of times the job ran
 	timer             *time.Timer    // handles running tasks at specific time
 	cronSchedule      cron.Schedule  // stores the schedule when a task uses cron
+}
+
+func (j *Job) JSON() string {
+	v := map[string]interface{}{
+		"name" : j.name,
+		"interval" : j.interval,
+		"unit" : j.getUnit(),
+		"startsImmediately" : j.getStartsImmediately(),
+		"atTime" : j.getAtTime(),
+		"startAtTime" : j.getStartAtTime().Format(time.RFC3339),
+		"error" : j.Error(),
+		"lastRun" : j.LastRun(),
+		"nextRun" : j.NextRun(),
+		"tags": strings.Join(j.Tags(), ","),
+		"runCount": j.RunCount(),
+	}
+	bs,_ := json.Marshal(v)
+	return string(bs)
 }
 
 type jobFunction struct {
